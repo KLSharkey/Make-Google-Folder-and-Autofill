@@ -49,7 +49,7 @@ function createVendorFolder(lastRow) {
  var vendorName = range.getValue();
   Logger.log(vendorName);
 //identify the parent folder the new folder will be in 
-  var parentFolder=DriveApp.getFolderById("1LG3fKnov5gU34zpG9pTiqYhQcqv80eta");
+  var parentFolder=DriveApp.getFolderById("[insert ID]");
   Logger.log("here");
 //create the new folder 
   var newFolder=parentFolder.createFolder(vendorName);
@@ -60,7 +60,7 @@ function createVendorFolder(lastRow) {
 }
 
 function createVendorSpreadsheet(idFolder) {
-var sheetActive = SpreadsheetApp.openById("11aixITvc3_HFroZ57W7_zMO0tx6R8bnW1KC7R-H8PqQ");
+var sheetActive = SpreadsheetApp.openById("[insert ID]");
 
 var destFolder = DriveApp.getFolderById(idFolder); //create destination
   DriveApp.getFileById(sheetActive.getId()).makeCopy("Vendor Due Diligence Spreadsheet", destFolder); //puts copy in destination 
@@ -103,7 +103,7 @@ function onEdit(event) {
 }
 
 // Create an incoming webhook here - https://api.slack.com/incoming-webhooks
-var POST_URL = "https://hooks.slack.com/services/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";
+var POST_URL = "https://hooks.slack.com/services/[insert ID]";
 
 //When form submitted
 function createSlackPost(SlackArr) {
@@ -128,7 +128,7 @@ function createSlackPost(SlackArr) {
             "author_name": email,
             "fields": vendorForm,
             "title": "Google Sheet with Form Responses",
-            "title_link": "https://docs.google.com/spreadsheets/d/1Mm1mDX45LtqqJgGYNPN0iGUyLmYR-O9ETykxAuhSjKI/edit#gid=1141772086"    
+            "title_link": "https://docs.google.com/spreadsheets/d/1[insert ID]"    
         }
     ]
   };
